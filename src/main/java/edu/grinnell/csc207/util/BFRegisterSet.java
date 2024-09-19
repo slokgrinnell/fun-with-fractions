@@ -1,7 +1,7 @@
 package edu.grinnell.csc207.util;
 
 /**
- * BFRegisterSet class provides a set of registers ('a' through 'z') 
+ * BFRegisterSet class provides a set of registers ('a' through 'z')
  * for storing and retrieving BigFractions.
  *
  * Author: Slok Rajbhandari
@@ -21,7 +21,6 @@ public class BFRegisterSet {
 
   /**
    * Stores the provided BigFraction in the specified register.
-   * 
    * @param register the register to store the value in ('a' through 'z')
    * @param val the BigFraction to store
    */
@@ -36,7 +35,6 @@ public class BFRegisterSet {
 
   /**
    * Retrieves the BigFraction stored in the specified register.
-   * 
    * @param register the register to retrieve the value from ('a' through 'z')
    * @return the BigFraction stored in the register
    */

@@ -16,7 +16,6 @@ public class QuickCalculator {
 
   /**
    * Main method that processes command-line arguments for quick calculations.
-   * 
    * @param args an array of expressions to evaluate
    */
   public static void main(String[] args) {

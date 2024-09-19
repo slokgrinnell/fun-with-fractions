@@ -8,8 +8,9 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
- * InteractiveCalculator class provides a REPL interface for fraction calculations using BFCalculator.
- * 
+ * InteractiveCalculator class provides a REPL interface
+ * for fraction calculations using BFCalculator.
+ *
  * Author: Slok Rajbhandari
  */
 public class InteractiveCalculator {
@@ -26,33 +27,32 @@ public class InteractiveCalculator {
       input = scanner.nextLine().trim();
       if (input.equalsIgnoreCase("QUIT")) {
         break;
-      }
+      } // end of if loop check
       try {
         processInput(input, calculator, registerSet, output);
         output.println(calculator.get());
       } catch (Exception e) {
         output.println("*** ERROR [" + e.getMessage() + "] ***");
-      }
-    }
+      } // end of try and catch
+    } // main (String[] args)
     scanner.close();
   } // main(String[] args)
 
   /**
    * Processes the input command and performs the corresponding operation.
-   * 
+   *
    * @param input the input command
    * @param calculator the BFCalculator to use
    * @param registerSet the BFRegisterSet to use
    * @param output the PrintWriter for output
    */
   private static void processInput(
-      String input, BFCalculator calculator, BFRegisterSet registerSet, PrintWriter output) {
+    String input, BFCalculator calculator, BFRegisterSet registerSet, PrintWriter output) {
     String[] tokens = input.split(" ");
-    
     if (tokens[0].equalsIgnoreCase("STORE")) {
       if (tokens.length != 2 || tokens[1].length() != 1) {
         throw new IllegalArgumentException("Invalid STORE command");
-      }
+      } // end of if loop
       char register = tokens[1].charAt(0);
       BigFraction lastValue = calculator.get();
       registerSet.store(register, lastValue);

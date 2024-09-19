@@ -21,14 +21,15 @@ public class BigFraction {
   public BigFraction(BigInteger num, BigInteger den) {
     if (den.equals(BigInteger.ZERO)) {
       throw new ArithmeticException("Denominator cannot be zero");
-    }
+    } // end of if(den)
     this.numerator = num;
     this.denominator = den;
     reduce(); // Simplify the fraction upon creation
   } // BigFraction(BigInteger num, BigInteger den)
 
   /**
-   * Constructor for BigFraction that initializes the fraction with integer numerator and denominator.
+   * Constructor for BigFraction that initializes
+   * fraction with integer numerator and denominator.
    *
    * @param num the numerator of the fraction
    * @param den the denominator of the fraction
@@ -145,10 +146,10 @@ public class BigFraction {
     BigInteger gcd = numerator.gcd(denominator);
     numerator = numerator.divide(gcd);
     denominator = denominator.divide(gcd);
-    if (denominator.signum() == -1) { // Ensure denominator is positive
+    if (denominator.signum() == -1) {
       numerator = numerator.negate();
       denominator = denominator.negate();
-    }// if loop (denominator)
+    } // if loop (denominator)
   } // reduce()
 
   /**
