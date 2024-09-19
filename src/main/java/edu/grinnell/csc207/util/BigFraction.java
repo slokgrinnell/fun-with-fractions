@@ -10,11 +10,16 @@ import java.math.BigInteger;
  */
 public class BigFraction {
 
-/**
- * Numerator and denominator of BigInteger type, required to make
- * fraction.
- */
+  /**
+   * Numerator of BigInteger type, required to make
+   * fraction.
+   */
   private BigInteger numerator;
+
+  /**
+   * Numerator of BigInteger type, required to make
+   * fraction.
+   */
   private BigInteger denominator;
 
   /**

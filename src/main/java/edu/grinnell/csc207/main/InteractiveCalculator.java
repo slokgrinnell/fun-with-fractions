@@ -21,7 +21,7 @@ public class InteractiveCalculator {
  * interface, allowing users to input fraction
  * calculations interactively until the "QUIT"
  * command is entered.
- * It continuously reads user input from 
+ * It continuously reads user input from
  * the console, processes the input using the BFCalculator
  * and BFRegisterSet, and outputs the result to the console.
  *
@@ -60,7 +60,7 @@ public class InteractiveCalculator {
    * @param output the PrintWriter for output
    */
   private static void processInput(
-    String input, BFCalculator calculator, BFRegisterSet registerSet, PrintWriter output) {
+      String input, BFCalculator calculator, BFRegisterSet registerSet, PrintWriter output) {
     String[] tokens = input.split(" ");
     if (tokens[0].equalsIgnoreCase("STORE")) {
       if (tokens.length != 2 || tokens[1].length() != 1) {
