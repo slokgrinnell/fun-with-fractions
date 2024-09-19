@@ -9,6 +9,11 @@ import java.math.BigInteger;
  * Author: Slok Rajbhandari
  */
 public class BigFraction {
+
+/**
+ * Numerator and denominator of BigInteger type, required to make
+ * fraction.
+ */
   private BigInteger numerator;
   private BigInteger denominator;
 

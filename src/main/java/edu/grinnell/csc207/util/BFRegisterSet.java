@@ -7,6 +7,10 @@ package edu.grinnell.csc207.util;
  * Author: Slok Rajbhandari
  */
 public class BFRegisterSet {
+
+/**
+ * Array initialized for empty registers.
+ */
   private BigFraction[] registers;
 
   /**

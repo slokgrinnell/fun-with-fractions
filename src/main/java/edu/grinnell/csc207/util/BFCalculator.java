@@ -7,6 +7,10 @@ package edu.grinnell.csc207.util;
  * Author: Slok Rajbhandari
  */
 public class BFCalculator {
+
+/**
+ * BigFraction type initialized to store the last value of the fraction.
+ */
   private BigFraction lastValue;
 
   /**

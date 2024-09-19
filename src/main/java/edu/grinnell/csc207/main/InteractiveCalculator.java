@@ -14,6 +14,19 @@ import java.util.Scanner;
  * Author: Slok Rajbhandari
  */
 public class InteractiveCalculator {
+
+/**
+ * Main method for the InteractiveCalculator. This
+ * method provides a REPL (Read-Eval-Print Loop)
+ * interface, allowing users to input fraction
+ * calculations interactively until the "QUIT"
+ * command is entered.
+ * It continuously reads user input from 
+ * the console, processes the input using the BFCalculator
+ * and BFRegisterSet, and outputs the result to the console.
+ *
+ * @param args Command-line arguments, not used in this program.
+ */
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     BFCalculator calculator = new BFCalculator();
