@@ -13,4 +13,6 @@ This project implements a fraction-based calculator with interactive and quick m
 5. **QuickCalculator**: A command-line interface for quick fraction calculations.
 
 ## Authors - Slok Rajbhandari
-## Acknowledgements - 
+## Acknowledgements - https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Fa/mps/mp02.html
+
+Throw new and try and catch I learned from youtube because they made a project with the try and catch.
