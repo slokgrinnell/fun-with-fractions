@@ -15,4 +15,6 @@ This project implements a fraction-based calculator with interactive and quick m
 ## Authors - Slok Rajbhandari
 ## Acknowledgements - https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Fa/mps/mp02.html
 
+## Github link - https://github.com/slokgrinnell/fun-with-fractions
+
 Throw new and try and catch I learned from youtube because they made a project with the try and catch.

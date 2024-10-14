@@ -10,7 +10,7 @@ import java.io.PrintWriter;
  * QuickCalculator class allows processing mathematical expressions
  * involving fractions using BFCalculator and BFRegisterSet.
  *
- * Author: Mihika
+ * Author: Slok Rajbhandari
  */
 public class QuickCalculator {
 

@@ -11,7 +11,7 @@ import java.util.Scanner;
  * InteractiveCalculator class provides a REPL interface
  * for fraction calculations using BFCalculator and BFRegisterSet.
  *
- * Author: Mihika
+ * Author: Slok Rajbhandari
  */
 public class InteractiveCalculator {
 
