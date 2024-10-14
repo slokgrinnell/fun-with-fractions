@@ -18,3 +18,8 @@ This project implements a fraction-based calculator with interactive and quick m
 ## Github link - https://github.com/slokgrinnell/fun-with-fractions
 
 Throw new and try and catch I learned from youtube because they made a project with the try and catch.
+
+WHAT I FIXED:
+
+- I fixed the output and used booleans to check if there is an error or not. If there is an error in the interactive calculator I made boolean false so that it does not return any values. I also fixed 2 x 3 error showing output
+-Everything matches the script now
