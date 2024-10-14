@@ -40,8 +40,10 @@ public class InteractiveCalculator {
         break;
       } // Exit if user types QUIT
       try {
-        processInput(input, calculator, registerSet, output);
-        output.println(calculator.get());
+        boolean success = processInput(input, calculator, registerSet, output);
+        if (success) {
+          output.println(calculator.get());  // Only print result if no error occurred
+        }
       } catch (Exception e) {
         output.println("*** ERROR: An unexpected error occurred. ***");
       } // end of if loop
@@ -56,28 +58,29 @@ public class InteractiveCalculator {
    * @param calculator the BFCalculator to use
    * @param registerSet the BFRegisterSet to use
    * @param output the PrintWriter for output
+   * @return true if the input is processed successfully, false otherwise
    */
-  private static void processInput(
+  private static boolean processInput(
       String input, BFCalculator calculator, BFRegisterSet registerSet, PrintWriter output) {
 
     // Split the input into tokens (space-separated)
     String[] tokens = input.split(" ");
     if (tokens.length == 0 || tokens[0].isEmpty()) {
-      output.println("*** ERROR: Invalid expression ***");
-      return;
+      output.println("*** ERROR [Invalid expression] ***");
+      return false;
     } // end of if
 
     // Handle the STORE command
     if (tokens[0].equalsIgnoreCase("STORE")) {
       if (tokens.length != 2 || tokens[1].length() != 1) {
-        output.println("*** ERROR: Invalid STORE command ***");
-        return;
+        output.println("*** ERROR [Invalid expression] ***");
+        return false;
       } // end of if
       char register = tokens[1].charAt(0);
       BigFraction lastValue = calculator.get();
       registerSet.store(register, lastValue);
       output.println("STORED");
-      return;
+      return false; // Do not print the calculator state after STORE
     } // end of if
 
     // Parse and compute the expression
@@ -87,7 +90,7 @@ public class InteractiveCalculator {
     if (tokens.length == 1) {
       calculator.clear();
       calculator.add(result);
-      return;
+      return true;
     } // end of if
 
     // Process the rest of the tokens
@@ -97,18 +100,22 @@ public class InteractiveCalculator {
       i++;
 
       if (i >= tokens.length) {
-        output.println("*** ERROR: Invalid expression, missing value after operator ***");
-        return;
+        output.println("*** ERROR [Invalid expression] ***");
+        return false;
       } // end of if
 
       BigFraction value = parseValue(tokens[i], registerSet);
       result = applyOperator(result, value, operator, output);
+      if (result == null) {
+        return false; // Error occurred during operator application
+      }
       i++;
     } // end of while
 
     // Update calculator with the final result
     calculator.clear();
     calculator.add(result);
+    return true;
   } // processInput
 
   /**
@@ -133,7 +140,7 @@ public class InteractiveCalculator {
    * @param result the current result of the calculation
    * @param value the next value to apply the operator to
    * @param operator the operator in the expression (+, -, *, /)
-   * @return the new result after applying the operator
+   * @return the new result after applying the operator, or null if an invalid operator
    * @param output the error message
    */
   private static BigFraction applyOperator(BigFraction result, BigFraction
@@ -148,8 +155,8 @@ public class InteractiveCalculator {
       case "/":
         return result.divide(value);
       default:
-        output.println("*** ERROR: Invalid operator '" + operator + "' ***");
-        return result;
+        output.println("*** ERROR [Invalid expression] ***");
+        return null;
     } // end of switch
   } // applyOperator
 } // InteractiveCalculator class
