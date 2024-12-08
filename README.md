@@ -23,3 +23,10 @@ WHAT I FIXED:
 
 - I fixed the output and used booleans to check if there is an error or not. If there is an error in the interactive calculator I made boolean false so that it does not return any values. I also fixed 2 x 3 error showing output
 -Everything matches the script now
+
+
+SECOND REDO FIXES
+
+- InteractiveCalculator.java for lines 46 & 111: "Regexp: Line matches the illegal pattern 'end brace without comment'."
+
+FIXED !!!
