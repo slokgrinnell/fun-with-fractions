@@ -43,7 +43,7 @@ public class InteractiveCalculator {
         boolean success = processInput(input, calculator, registerSet, output);
         if (success) {
           output.println(calculator.get());  // Only print result if no error occurred
-        }
+        } // success evaluation
       } catch (Exception e) {
         output.println("*** ERROR: An unexpected error occurred. ***");
       } // end of if loop
@@ -108,7 +108,7 @@ public class InteractiveCalculator {
       result = applyOperator(result, value, operator, output);
       if (result == null) {
         return false; // Error occurred during operator application
-      }
+      } // Result is null
       i++;
     } // end of while
 
